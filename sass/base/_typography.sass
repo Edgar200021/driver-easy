@@ -1,3 +1,5 @@
+@use '../absctract/_mixins' as mixins
+	
 @font-face
 	font-family: 'Jost'
 	src: url('../../assets/fonts/Jost-Light.ttf'),
@@ -45,3 +47,6 @@ body
 	font-family: 'Jost'
 	font-weight: 400
 	font-size: 24px
+
+.first-title
+	@include mixins.font(50px, 700, 50px)
