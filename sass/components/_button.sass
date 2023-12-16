@@ -1,0 +1,18 @@
+@use '../absctract/_variables' as vars
+@use '../absctract/_mixins' as mixins
+
+.button
+	max-width: vars.$button-max-width
+	min-width: vars.$button-min-width
+	padding: 20px vars.$button-padding
+	background-color: vars.$primary-color
+	border-radius: 32.5px
+	transition: transform .3s ease
+	@include mixins.respond(mini-tablet)
+		padding: 10px vars.$button-padding
+	&:not(:disabled)
+		@media(hover:hover)
+		@include mixins.hover()	
+			transform: translateY(-8px)
+		&:active
+			transform: translateY(-4px)

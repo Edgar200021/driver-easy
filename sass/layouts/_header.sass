@@ -1,0 +1,23 @@
+@use '../absctract/_variables' as vars
+@use '../absctract/_mixins' as mixins
+	
+.header
+	&__inner 
+		display: flex
+		align-items: center
+		justify-content: start
+		column-gap: 40px
+		padding: 22px 0 17px 0
+	&__avard
+		max-width: 193px 
+		min-width: 147px
+		padding-left: 29px 
+		border-left: 1px solid vars.$grey-color
+		padding-top: 11px 
+	&__download
+		margin-left: auto
+		&-text 
+			margin-right: 70px
+			color: vars.$secondary-color
+			@include mixins.font(22, 700)
+		
