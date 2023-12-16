@@ -2,6 +2,7 @@
 @use '../absctract/_mixins' as mixins
 
 .button
+	display: inline-block
 	max-width: vars.$button-max-width
 	min-width: vars.$button-min-width
 	padding: 20px 25px
@@ -20,9 +21,8 @@
 			color: white
 	@include mixins.respond(mini-tablet)
 		padding: 10px vars.$button-padding
-	&:not(:disabled)
-		@media(hover:hover)
-		@include mixins.hover()	
-			transform: translateY(-8px)
-		&:active
-			transform: translateY(-4px)
+	&:hover
+		transform: translateY(-8px)
+	&:active
+		transform: translateY(-4px)
+	
