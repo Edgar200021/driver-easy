@@ -1,9 +1,137 @@
+@use '../absctract/_variables' as vars
+@use '../absctract/_mixins' as mixins
 
 
 .advantages
+	margin-bottom: 86px
+	&__container
+		position: relative
 	&__title
 		text-align: center
 		margin-bottom: 100px
 	&__list
 		display: flex 
 		gap: 20px
+
+//.update-decor
+//	position: relative	
+//	&::after
+//		content: ''
+//		position: absolute 
+//		background: center/cover no-repeat
+//		width: 800px
+//		height: 800px
+//		bottom: 0
+//		right: 0
+//		background-image: url()
+//		z-index: -5
+//		border-radius: 100%
+//		background:  url('../../assets/img/decor.png'), lightgray 0px 0px / 100% 100% no-repeat
+//		opacity: 0.1
+
+
+.update
+	margin-bottom: 190px	
+	&__title
+		margin-bottom: 114px
+		text-align: center
+	&__descr
+		@include mixins.font(64px,400, 75px)
+		max-width: 990px
+		&-box
+			position: relative
+			margin-bottom: 60px
+			overflow-x: clip
+			&::before	
+				content: ''
+				position: absolute 
+				background: center/cover no-repeat
+				right: -100px
+				top: 0px
+				width: 600px 
+				height: 450px
+				background-image: url('../../assets/img/ill_shield.png')
+				z-index: -1
+		&-text
+			display: inline-block
+			border-radius: 0px 9px 9px 0px
+			padding: 15px 22px
+			background-color: vars.$secondary-color
+			margin-top: 15px
+			span
+				color: rgba(255, 255, 255, 0.50)
+	&__info
+		&-link
+			display: block
+			@include mixins.font(45px)
+			margin-bottom: 60px
+		&-title
+			position: relative
+			@include mixins.font(42px, 400, 48.75px)
+			padding-left: 56px
+			max-width: 680px
+			display: inline-block
+			margin-bottom: 25px
+			&::before
+				content: ''
+				position: absolute 
+				left: 16px
+				top: 20px
+				width: 15px
+				height: 15px
+				background-color: white
+				border-radius: 100%
+			&-box
+				display: flex
+				align-items: start
+			&-decor
+				flex-grow: 1
+				display: inline-block
+				height: 2px
+				background: white		
+				margin-top: 35px	
+		&-content
+			padding-left: 56px
+			display: flex
+		&-text
+			position: relative
+			padding-left: 40px
+			max-width: 653px
+			background: linear-gradient(180deg, #FFF 0.27%, rgba(255, 255, 255, 0.00) 96.18%)
+			background-clip: text
+			-webkit-background-clip: text
+			-webkit-text-fill-color: transparent
+			&::before
+				content: ''
+				position: absolute 
+				left: 16px
+				top: 15px
+				width: 5px
+				height: 5px
+				background-color: white
+				border-radius: 100%
+		&-download
+			position: relative
+			margin: 0 auto
+			display: flex
+			flex-direction: column
+			row-gap: 20px
+			z-index: 2
+			&::after
+				content: ''		
+				position: absolute 
+				background: center/cover no-repeat
+				background-image: url('../../assets/icons/driver-easy.svg')
+				width: 290px
+				height: 236px
+				bottom: -120px
+				right: 20px
+				filter: blur(2.5px)
+				z-index: -1
+			&-text 
+				@include mixins.font(45px, 300)
+
+.drivers
+	&__title
+		text-align: center
+		margin-bottom: 100px

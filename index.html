@@ -47,12 +47,11 @@
                 All what u need it's download and click "Scan now"
               </span>
             </p>
-            <button class="hero__btn button">
-              <img
-                class="hero__btn-img"
-                src="./assets/icons/win-11.svg"
-                alt=""
-              />Download free
+            <button class="hero__btn button button__download">
+              <svg class="button__download-img">
+                <use xlink:href="./assets/icons/sprite.svg#icon-win-10" />
+              </svg>
+              Download free
             </button>
             <span class="hero__available blue">
               Also available for
@@ -121,7 +120,9 @@
         </div>
       </section>
       <section class="advantages">
-        <div class="container">
+        <div class="container advantages__container">
+          <span class="small-circle"></span>
+          <span class="big-circle"></span>
           <div class="h2 advantages__title second-title green">
             Our advantages
           </div>
@@ -168,6 +169,73 @@
           </ul>
         </div>
       </section>
+
+      <div class="update-decor">
+        <section class="update">
+          <div class="container">
+            <h2 class="update__title second-title green">
+              How to update all your drivers with just 1 click
+            </h2>
+
+            <div class="update__descr-box">
+              <p class="update__descr first-title">
+                The easiest way to automatically update your drivers is with our
+                tool,
+                <span class="update__descr-text"
+                  >Driver <span> Easy Pro. </span>
+                </span>
+              </p>
+            </div>
+            <div class="update__info">
+              <span class="update__info-link">
+                With
+                <a
+                  target="_blank"
+                  href="https://www.drivereasy.com/buy.php?comeid=autoupdate"
+                  class="blue"
+                  >With Driver Easy Pro</a
+                ><span class="blue">:</span>
+              </span>
+
+              <div class="update__info-title-box">
+                <span class="update__info-title">
+                  You can update all your drivers with just one click.</span
+                >
+                <span class="update__info-title-decor"></span>
+              </div>
+              <div class="update__info-content">
+                <p class="update__info-text">
+                  You don’t have to know anything about computers. Driver Easy
+                  will automatically recognize your system and all your devices,
+                  and install the latest correct drivers for you – direct from
+                  the manufacturer. You don’t need to know exactly what system
+                  your computer is running, you don’t need to risk downloading
+                  and installing the wrong drivers,
+                </p>
+                <div class="update__info-download">
+                  <span class="update__info-download-text"
+                    >Don't waste time!</span
+                  >
+                  <button class="update__btn button button__download">
+                    <svg class="button__download-img">
+                      <use xlink:href="./assets/icons/sprite.svg#icon-win-10" />
+                    </svg>
+                    Download free
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="drivers">
+          <div class="container">
+            <h2 class="drivers__title second-title green">
+              Finds drivers for…
+            </h2>
+          </div>
+        </section>
+      </div>
     </main>
   </body>
 </html>

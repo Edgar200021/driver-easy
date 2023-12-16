@@ -10,3 +10,47 @@
 	color: vars.$secondary-color
 .blue
 	color: vars.$primary-color
+
+
+.small-circle
+	display: block 
+	position: absolute
+	z-index: -10
+	width: 993px
+	height: 993px
+	left: -80px
+	top: 45px
+	border-radius: 993px
+	border: 1px solid #17171F
+	&::before
+		content: ''
+		position: absolute
+		width: 15px
+		height: 15px
+		top: 0
+		left: 40%
+		transform: translateX(-40%)
+		border-radius: 30px
+		background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMSIgaGVpZ2h0PSIyMSIgdmlld0JveD0iMCAwIDIxIDIxIiBmaWxsPSJub25lIj4NCjxjaXJjbGUgY3g9IjEwLjUiIGN5PSIxMC41IiByPSIxMC41IiBmaWxsPSIjMTcxNzFGIi8+DQo8L3N2Zz4=') center no-repeat
+
+.big-circle
+	display: block 
+	position: absolute
+	z-index: -10
+	width: 1200px
+	height: 1200px
+	right: 0
+	top: -70px
+	border-radius: 993px
+	border: 1px solid #17171F
+	&::before
+		content: ''
+		position: absolute
+		width: 21px
+		height: 21px
+		top: 0
+		left: 30%
+		transform: translateX(-30%)
+		top: 35px
+		border-radius: 30px
+		background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMSIgaGVpZ2h0PSIyMSIgdmlld0JveD0iMCAwIDIxIDIxIiBmaWxsPSJub25lIj4NCjxjaXJjbGUgY3g9IjEwLjUiIGN5PSIxMC41IiByPSIxMC41IiBmaWxsPSIjMTcxNzFGIi8+DQo8L3N2Zz4=') center no-repeat

@@ -8,6 +8,16 @@
 	background-color: vars.$primary-color
 	border-radius: 32.5px
 	transition: transform .3s ease
+	&__download
+		display: flex
+		align-items: center 
+		column-gap: 15px
+		margin-bottom: 20px
+		@include mixins.font(22px)
+		&-img
+			width: 32px
+			height: 32px
+			color: white
 	@include mixins.respond(mini-tablet)
 		padding: 10px vars.$button-padding
 	&:not(:disabled)
