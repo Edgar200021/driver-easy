@@ -1,0 +1,8 @@
+<svg width="160" height="160" viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g opacity="0.4">
+<path d="M159 128.134V1.15161L32.018 1.15161L32.018 128.134H159Z" stroke="white" stroke-opacity="0.1"/>
+<path d="M127.982 159.152L127.982 32.1699L0.999931 32.1699L0.999931 159.152H127.982Z" stroke="white" stroke-opacity="0.1"/>
+<path d="M32.0189 1L32.0188 128.133L1.00049 158.667V31.6852L32.0189 1Z" stroke="white" stroke-opacity="0.1" stroke-linejoin="bevel"/>
+<path d="M159 1V128.133L127.982 159.151V31.6852L159 1Z" stroke="white" stroke-opacity="0.1" stroke-linejoin="bevel"/>
+</g>
+</svg>

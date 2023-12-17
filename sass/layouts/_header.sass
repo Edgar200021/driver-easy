@@ -3,6 +3,13 @@
 	
 .header
 	height: vars.$header-height
+	background: rgba(9, 10, 19, 0.80)
+	backdrop-filter: blur(10px)	
+	position: fixed 
+	top: 0
+	left: 0
+	width: 100%
+	z-index: 50
 	&__inner 
 		display: flex
 		align-items: center
@@ -16,7 +23,8 @@
 		border-left: 1px solid vars.$grey-color
 		padding-top: 11px 
 	&__download
-		margin-left: auto
+		flex-grow: 1
+		text-align: end
 		&-text 
 			margin-right: 70px
 			color: vars.$secondary-color

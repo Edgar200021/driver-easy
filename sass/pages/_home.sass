@@ -125,27 +125,22 @@
 				background-image: url('../../assets/icons/driver-easy.svg')
 				width: 290px
 				height: 236px
-				bottom: -60px
+				bottom: -40px
 				right: 20px
 				filter: blur(2.5px)
 				z-index: -1
 			&-text 
 				@include mixins.font(45px, 300)
 
-.drivers
-	&__title
-		text-align: center
-		margin-bottom: 100px
 
 
 .drivers
 	margin-bottom: 50px
+	&__title
+		text-align: center
+		margin-bottom: 100px
 	&__container
 		position: relative
-		border-radius: 0px 56px 0px 0px
-		border-top: 2px solid #FFF
-		border-right: 2px solid #FFF
-		
 		&::before
 			content: ''
 			position: absolute
@@ -160,4 +155,155 @@
 		display: grid
 		grid-template-columns: repeat(3,1fr)
 		row-gap: 60px
-		
+
+
+.certified-wrapper
+	position: relative
+	border-radius: 19px
+	padding-bottom: 70px
+	margin-bottom: 86px
+	padding-top: 86px
+	&::before
+		content: ''
+		position: absolute
+		inset: 0
+		filter: blur(20px)
+		z-index: -1
+		width: 100%
+		height: 100%
+		border: 1px solid  #17171F
+		background: radial-gradient(100% 100% at 50% 100%, #7686B6 0%, #375DAE 32.69%, rgba(0, 0, 0, 0.00) 100%), #0A0A14
+.certified
+	margin-bottom: 86px
+	&__title
+		text-align: center
+		margin-bottom: 78px
+	&__text
+		position: relative
+		padding: 40px 180px 25px 200px
+		display: flex 
+		column-gap: 20px 
+		@include mixins.font(28px)
+		margin-bottom: 50px
+		&-right 
+			background: linear-gradient(to right, transparent) padding-box,linear-gradient(to right, black 0%, white 98%, black 101%) border-box
+			border-bottom-right-radius: 56px
+			border-bottom: 2px solid #fff
+			border-right: 2px solid #fff
+			padding-top: 60px
+		&::before
+			content: ''
+			position: absolute 
+			width: 158px
+			height: 158px
+			top: -20px
+			left: 50%
+			transform: translateX(-50%)
+			background: url('../../assets/icons/2d.svg') center/cover no-repeat
+			z-index: -1
+	&__btn
+		display: block
+		margin: 0 auto
+		width: 250px
+		font-weight: 700
+	
+
+.download
+	&__title
+		margin-bottom: 65px
+		text-align: center
+	&__content
+		padding: 40px 90px 0px 200px
+		display: flex
+		justify-content: space-between
+		&-left
+			max-width: 467px
+		&-right
+			position: relative
+			width: 551px
+			height: 250px
+			background: #0a0a0a
+			border-radius: 48px
+			&::after
+				content: ''
+				position: absolute
+				width: 244px
+				height: 331px
+				right: 150px
+				top: -100px
+				background: url('../../assets/icons/cloud.svg') center/cover no-repeat
+			
+	&__text
+		max-width: 400px
+		@iclude mixins.font(28px)
+		margin-bottom: 33px
+	&__btn
+		font-weight: 700
+
+
+.manufacturer
+	margin-bottom: 79px
+	&__title
+		text-align: center
+		margin-bottom: 46px
+	&__inner
+		display: flex
+		justify-content: space-between
+	&__text 
+		width: 845px
+		flex-grow: 1
+		@include mixins.font(64px)
+		span
+			border-radius: 0px 9px 9px 0px
+			background-color: vars.$secondary-color
+			padding: 0 22px 
+			margin-right: 18px
+	&__info
+		position: relative
+		overflow: hidden
+		width: 590px
+		border-radius: 30px
+		background: linear-gradient(180deg, rgba(68, 62, 56, 0.00) 0%, #111115 100%)
+		padding: 91px 150px 33px 39px
+		&::before
+			content: ''
+			position: absolute
+			bottom: -100px
+			right: -50px
+			width: 100%
+			height: 100%
+			background-image: url('../../assets/img/shield-right.png') 
+			background-position: bottom right
+			background-size: cover
+			background-repeat: no-repeat
+			z-index: -1
+		&-title
+			display: block 
+			@include mixins.font(32px,300,38.4px)
+			margin-bottom: 27px
+		&-text 
+			@include mixins.font(24px,300,32px )
+			margin-bottom: 35px
+			color: rgba(255, 255, 255, 0.60)
+		&-windows
+			display: flex 
+			column-gap: 60px
+			&-item 
+				@include mixins.font(18px, 300, 24px)
+				&:nth-child(1) div
+					background-color: #2E77BC
+				&:nth-child(2) div
+					background-color: white
+					svg
+						color: vars.$primary-color
+				&:nth-child(3) div
+					background-color: rgba(255, 255, 255, 0.30)
+
+			&-img
+				width: 65px
+				height: 65px
+				color: white
+			&-box
+				padding: 19px
+				border-radius: 9px
+				margin-bottom: 22px

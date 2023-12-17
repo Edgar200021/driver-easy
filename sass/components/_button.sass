@@ -5,10 +5,14 @@
 	display: inline-block
 	max-width: vars.$button-max-width
 	min-width: vars.$button-min-width
-	padding: 20px 25px
+	width: 100%
+	padding: 12px 25px
 	background-color: vars.$primary-color
 	border-radius: 32.5px
 	transition: transform .3s ease
+	&_transparent 
+		background-color: transparent
+		border: 1px solid #FFF
 	&__download
 		display: flex
 		align-items: center 
