@@ -1,0 +1,20 @@
+@use '../absctract/_variables' as vars
+@use '../absctract/_mixins' as mixins
+
+	
+	
+.function
+	max-width: 345px
+	width: 100%
+	&__img-box
+		width: 60px
+		height: 60px 
+		margin-bottom: 20px
+	&__title
+		margin-bottom: 20px
+		@include mixins.font(32px)
+		min-height: 95px
+	&__text
+		@include mixins.font(24px)
+		color: rgba(255, 255, 255, 0.60)
+		
