@@ -544,12 +544,12 @@ body {
 }
 
 .hero {
-  height: calc(100vh - 140px);
+  height: calc(100vh - 126px);
   max-height: 1000px;
   min-height: 640px;
   position: relative;
   padding: 0 15px;
-  margin-top: 140px;
+  margin-top: 126px;
   margin-bottom: 90px;
 }
 .hero::after {
@@ -896,7 +896,7 @@ body {
 }
 
 .header {
-  height: 140px;
+  height: 126px;
   background: rgba(9, 10, 19, 0.8);
   backdrop-filter: blur(10px);
   position: fixed;
@@ -910,7 +910,7 @@ body {
   align-items: center;
   justify-content: start;
   column-gap: 40px;
-  padding: 22px 0 17px 0;
+  padding: 15px 0 17px 0;
 }
 .header__avard {
   max-width: 193px;
