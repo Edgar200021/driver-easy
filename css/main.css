@@ -412,7 +412,7 @@ body {
   background-color: transparent;
   border: 1px solid #FFF;
 }
-.button__download {
+.button_download {
   display: flex;
   align-items: center;
   column-gap: 15px;
@@ -421,14 +421,14 @@ body {
   font-weight: 400;
   font-family: "Jost";
 }
-.button__download:hover {
+.button_download:hover {
   background-color: white;
   color: #197FE3;
 }
-.button__download:hover svg {
+.button_download:hover svg {
   color: #197FE3;
 }
-.button__download-img {
+.button_download-img {
   transition: color 0.3s ease;
   width: 32px;
   height: 32px;
