@@ -916,6 +916,10 @@ body {
   color: #8690A1;
 }
 
+.page {
+  display: none;
+}
+
 .advantages {
   margin-bottom: 86px;
 }

@@ -8,11 +8,8 @@ const setVisible = (elementOrSelector, visible, display) =>
     : elementOrSelector
   ).style.display = visible ? display : 'none')
 
-setVisible('.page', false, 'none')
-setVisible('#loading', true, 'flex')
-
 document.addEventListener('DOMContentLoaded', () => {
-  wait(30000).then(() => {
+  wait(1000).then(() => {
     setVisible('.page', true, 'block')
     setVisible('#loading', false, 'none')
   })
