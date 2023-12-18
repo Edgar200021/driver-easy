@@ -236,6 +236,13 @@ body {
   font-style: normal;
 }
 @font-face {
+  font-family: "YourGrace";
+  src: url("../../assets/fonts/CoveredByYourGrace-Regular.ttf");
+  src: url("../../assets/fonts/CoveredByYourGrace-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
   font-family: "Jost";
   src: url("../../assets/fonts/Jost-Medium.ttf");
   src: url("../../assets/fonts/Jost-Medium.woff2") format("woff2");
@@ -273,11 +280,13 @@ body {
   font-size: 50px;
   font-weight: 700;
   line-height: 50px;
+  font-family: "Jost";
 }
 
 .second-title {
   font-size: 45px;
   font-weight: 400;
+  font-family: "Jost";
 }
 
 .container {
@@ -348,6 +357,9 @@ body {
   border-right: 2px solid transparent;
   z-index: 2;
 }
+.border-black-container_without-image::before {
+  display: none;
+}
 .border-black-container::after {
   content: "";
   position: absolute;
@@ -378,7 +390,7 @@ body {
   padding: 12px 25px;
   background-color: #197FE3;
   border-radius: 32.5px;
-  transition: transform 0.3s ease;
+  transition: all 0.3s ease;
 }
 .button_transparent {
   background-color: transparent;
@@ -391,8 +403,17 @@ body {
   margin-bottom: 20px;
   font-size: 22px;
   font-weight: 400;
+  font-family: "Jost";
+}
+.button__download:hover {
+  background-color: white;
+  color: #197FE3;
+}
+.button__download:hover svg {
+  color: #197FE3;
 }
 .button__download-img {
+  transition: color 0.3s ease;
   width: 32px;
   height: 32px;
   color: white;
@@ -452,6 +473,7 @@ body {
 .hero__text {
   font-size: 25px;
   font-weight: 400;
+  font-family: "Jost";
   color: #8690A1;
   margin-bottom: 26px;
 }
@@ -488,10 +510,12 @@ body {
 .hero__awards-suptext {
   font-size: 32px;
   font-weight: 300;
+  font-family: "Jost";
 }
 .hero__awards-subtext {
   font-size: 16px;
   font-weight: 600;
+  font-family: "Jost";
   display: block;
   margin-bottom: 25px;
 }
@@ -519,6 +543,7 @@ body {
   font-size: 32px;
   font-weight: 300;
   line-height: 20px;
+  font-family: "Jost";
   text-transform: capitalize;
 }
 .award__subtext {
@@ -526,6 +551,7 @@ body {
   font-size: 18px;
   font-weight: 600;
   line-height: 20px;
+  font-family: "Jost";
 }
 
 .advantage {
@@ -571,6 +597,7 @@ body {
   z-index: 2;
   font-size: 32px;
   font-weight: 400;
+  font-family: "Jost";
 }
 
 .driver {
@@ -611,6 +638,7 @@ body {
 .driver__text {
   font-size: 28px;
   font-weight: 400;
+  font-family: "Jost";
   padding: 4px 6px;
   border-radius: 4px;
   background-color: #00B67A;
@@ -677,12 +705,38 @@ body {
   margin-bottom: 20px;
   font-size: 32px;
   font-weight: 400;
+  font-family: "Jost";
   min-height: 95px;
 }
 .function__text {
   font-size: 24px;
   font-weight: 400;
+  font-family: "Jost";
   color: rgba(255, 255, 255, 0.6);
+}
+
+.review {
+  max-width: 595px;
+  padding: 52px 31px 0 0;
+}
+.review__text {
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 31.2px;
+  font-family: "Jost";
+  margin-bottom: 32px;
+}
+.review__user {
+  display: flex;
+  align-items: center;
+  column-gap: 20px;
+}
+.review__user-img-box {
+  width: 64px;
+  height: 64p;
+}
+.review__user-rating-list {
+  display: flex;
 }
 
 .header {
@@ -718,6 +772,49 @@ body {
   color: #00B67A;
   font-size: 22;
   font-weight: 700;
+  font-family: "Jost";
+}
+
+.footer {
+  margin-bottom: 70px;
+}
+.footer__top {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  column-gap: 40px;
+  padding: 22px 0 17px 0;
+  margin-bottom: 20px;
+}
+.footer__bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 22px;
+}
+.footer__avard {
+  display: flex;
+  align-items: center;
+  column-gap: 40px;
+  padding-left: 29px;
+  border-left: 1px solid #8690A1;
+}
+.footer__download {
+  flex-grow: 1;
+  text-align: end;
+}
+.footer__download button {
+  margin-left: auto;
+}
+.footer__download-text {
+  margin-right: 70px;
+  color: #00B67A;
+  font-size: 22;
+  font-weight: 700;
+  font-family: "Jost";
+}
+.footer__copyright {
+  color: #8690A1;
 }
 
 .advantages {
@@ -746,6 +843,7 @@ body {
   font-size: 64px;
   font-weight: 400;
   line-height: 75px;
+  font-family: "Jost";
   max-width: 990px;
 }
 .update__descr-box {
@@ -778,6 +876,7 @@ body {
   display: block;
   font-size: 45px;
   font-weight: 400;
+  font-family: "Jost";
   margin-bottom: 60px;
 }
 .update__info-title {
@@ -785,6 +884,7 @@ body {
   font-size: 42px;
   font-weight: 400;
   line-height: 48.75px;
+  font-family: "Jost";
   padding-left: 56px;
   max-width: 680px;
   display: inline-block;
@@ -821,6 +921,7 @@ body {
   max-width: 653px;
   font-size: 28px;
   font-weight: 400;
+  font-family: "Jost";
   background: linear-gradient(180deg, #FFF 0.3%, rgba(255, 255, 255, 0) 96.18%);
   background-clip: text;
   -webkit-background-clip: text;
@@ -859,6 +960,7 @@ body {
 .update__info-download-text {
   font-size: 45px;
   font-weight: 300;
+  font-family: "Jost";
 }
 
 .drivers {
@@ -909,6 +1011,7 @@ body {
   column-gap: 20px;
   font-size: 28px;
   font-weight: 400;
+  font-family: "Jost";
   margin-bottom: 50px;
 }
 .certified__text-right {
@@ -989,6 +1092,7 @@ body {
   flex-grow: 1;
   font-size: 64px;
   font-weight: 400;
+  font-family: "Jost";
 }
 .manufacturer__text span {
   border-radius: 0px 9px 9px 0px;
@@ -1022,12 +1126,14 @@ body {
   font-size: 32px;
   font-weight: 300;
   line-height: 38.4px;
+  font-family: "Jost";
   margin-bottom: 27px;
 }
 .manufacturer__info-text {
   font-size: 24px;
   font-weight: 300;
   line-height: 32px;
+  font-family: "Jost";
   margin-bottom: 35px;
   color: rgba(255, 255, 255, 0.6);
 }
@@ -1039,6 +1145,7 @@ body {
   font-size: 18px;
   font-weight: 300;
   line-height: 24px;
+  font-family: "Jost";
 }
 .manufacturer__info-windows-item:nth-child(1) div {
   background-color: #2E77BC;
@@ -1079,9 +1186,221 @@ body {
   flex-wrap: wrap;
   gap: 45px 80px;
 }
+.functions__btn {
+  display: inline-flex;
+  align-items: center;
+  column-gap: 7px;
+  position: absolute;
+  right: 12px;
+  bottom: 0;
+  transition: transform 0.3s ease;
+}
+.functions__btn:hover {
+  transform: translateY(-5px);
+}
+.functions__btn-img {
+  width: 32px;
+  height: 32px;
+}
 .functions__download {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.instructions {
+  margin-bottom: 88px;
+}
+.instructions__title {
+  margin-block: 94px;
+  text-align: center;
+}
+.instructions__descr {
+  max-width: 823px;
+  margin-bottom: 114px;
+  font-size: 64px;
+  font-weight: 400;
+  font-family: "Jost";
+  position: relative;
+}
+.instructions__descr::before {
+  content: "";
+  width: 258px;
+  height: 456px;
+  position: absolute;
+  top: 60px;
+  right: -500px;
+  background: url("../../assets/icons/stepbystep.svg") center/cover no-repeat;
+  z-index: -1;
+}
+.instructions__content {
+  display: flex;
+  justify-content: space-between;
+}
+.instructions__content-left {
+  padding-left: 24px;
+  max-width: 660px;
+  width: 100%;
+}
+.instructions__item {
+  width: fit-content;
+  position: relative;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 44px;
+  font-family: "Jost";
+  letter-spacing: -0.5px;
+}
+.instructions__item_active > div.instructions__item-box {
+  grid-template-rows: 1fr;
+}
+.instructions__item_active * span.instructions__item-count {
+  color: #00B67A;
+}
+.instructions__item-top {
+  cursor: pointer;
+  margin-bottom: 6px;
+}
+.instructions__item-count {
+  font-size: 48px;
+  font-weight: 400;
+  line-height: 50px;
+  font-family: "YourGrace";
+  letter-spacing: 4px;
+  color: rgba(0, 182, 122, 0.4);
+  transition: color 0.3s ease;
+  margin-right: 58px;
+}
+.instructions__item-img-box {
+  height: 96px;
+}
+.instructions__item-img {
+  width: 2px;
+  height: 100%;
+}
+.instructions__item-box {
+  display: grid;
+  grid-template-rows: 0fr;
+  overflow: hidden;
+  transition: grid-template-rows 0.7s ease;
+  padding-left: 17px;
+}
+.instructions__item-content {
+  min-height: 0px;
+  display: flex;
+  column-gap: 90px;
+}
+.instructions__item-text {
+  max-width: 370px;
+  color: #8690A1;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 34px;
+  font-family: "Jost";
+}
+.instructions__item:not(:last-child) {
+  margin-bottom: 42px;
+}
+
+.about {
+  padding-top: 305px;
+  margin-bottom: 85px;
+  position: relative;
+  user-select: none;
+}
+.about::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(1, 1, 11, 0) 0%, rgba(1, 1, 11, 0.72) 27.08%, #01010B 62.5%, #01010B 100%);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+.about__video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+.about__title {
+  position: relative;
+  z-index: 3;
+  max-width: 576px;
+  margin: 0 auto;
+  text-align: center;
+  margin-bottom: 85px;
+}
+.about__text {
+  position: relative;
+  z-index: 3;
+  max-width: 1360px;
+  margin: 0 auto;
+  font-size: 64px;
+  font-weight: 400;
+  line-height: 75px;
+  font-family: "Jost";
+  text-align: center;
+}
+.about__text-colored {
+  display: block;
+  background-color: #00B67A;
+  width: fit-content;
+  margin: 0 auto;
+  padding: 15px 20px;
+  border-radius: 9px;
+  margin-top: 10px;
+}
+
+.customers {
+  margin-bottom: 67px;
+}
+.customers__inner {
+  padding: 83px 0px 102px 119px;
+  border-radius: 19px;
+  background: url("../../assets/cursomers.svg") center/cover no-repeat;
+}
+.customers__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  margin-bottom: 50px;
+  max-width: 1140px;
+}
+.customers__bottom {
+  display: flex;
+  column-gap: 20px;
+}
+.customers__title {
+  font-size: 65px;
+  font-weight: 400;
+  line-height: 75px;
+  font-family: "Jost";
+  max-width: 430px;
+}
+.customers__action {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+}
+.customers__action-btn {
+  transition: transform 0.3s ease;
+  padding: 0;
+}
+.customers__action-btn:hover {
+  transform: translateY(-2px);
+}
+.customers__action-btn.left svg {
+  color: #4A4A55;
+}
+.customers__action-btn.right svg {
+  transform: rotate(180deg);
+}
+.customers__action-btn-img {
+  width: 32px;
+  height: 32px;
+  color: #00B67A;
 }/*# sourceMappingURL=main.css.map */

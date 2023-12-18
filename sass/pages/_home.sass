@@ -304,7 +304,7 @@
 	margin-bottom: 86px
 	&__container
 		margin-bottom: 93px
-	&__title 
+	&__title
 		margin-bottom: 46px
 		text-align: center
 	&__list
@@ -312,8 +312,172 @@
 		display: flex
 		flex-wrap: wrap
 		gap: 45px 80px
+	&__btn
+		display: inline-flex
+		align-items: center
+		column-gap: 7px
+		position: absolute
+		right: 12px
+		bottom: 0
+		transition: transform .3s ease
+		&:hover
+			transform: translateY(-5px)
+		&-img
+			width: 32px
+			height: 32px
 	&__download
 		display: flex
 		flex-direction: column
 		justify-content: center
-		align-items: center 
+		align-items: center
+
+
+.instructions
+	margin-bottom: 88px
+	&__title
+		margin-block: 94px
+		text-align: center
+	&__descr
+		max-width: 823px
+		margin-bottom: 114px
+		@include mixins.font(64px)
+		position: relative
+		&::before
+			content: ''
+			width: 258px
+			height: 456px
+			position: absolute
+			top: 60px
+			right: -500px
+			background: url('../../assets/icons/stepbystep.svg') center/cover no-repeat
+			z-index: -1
+	&__content
+		display: flex
+		justify-content: space-between
+		&-left
+			padding-left: 24px
+			max-width: 660px
+			width: 100%
+		&-right
+	&__item
+		width: fit-content
+		position: relative
+		@include mixins.font(32px, 700, 44px)
+		letter-spacing: -.5px
+		&_active
+			& > div.instructions__item-box
+				grid-template-rows: 1fr
+			& * span.instructions__item-count 
+				color: vars.$secondary-color
+		&-top
+			cursor: pointer
+			margin-bottom: 6px
+		&-count
+			@include mixins.font(48px,400,50px, 'YourGrace')
+			letter-spacing: 4px
+			color: rgba(0, 182, 122, 0.40)
+			transition: color .3s ease
+			margin-right: 58px
+		&-img-box
+			height: 96px
+		&-img 
+			width: 2px
+			height: 100%
+		&-box
+			display: grid
+			grid-template-rows: 0fr
+			overflow: hidden
+			transition: grid-template-rows .7s ease
+			padding-left: 17px
+		&-content
+			min-height: 0px
+			display: flex
+			column-gap: 90px
+		&-text
+			max-width: 370px
+			color: #8690A1
+			@include mixins.font(20px, 500, 34px)
+		&:not(:last-child)
+			margin-bottom: 42px
+
+
+
+.about
+	padding-top: 305px
+	margin-bottom: 85px
+	position: relative
+	user-select: none
+	&::before
+		content: ''
+		width: 100%
+		height: 100%
+		background: linear-gradient(180deg, rgba(1, 1, 11, 0.00) 0%, rgba(1, 1, 11, 0.72) 27.08%, #01010B 62.5%, #01010B 100%)
+		position: absolute
+		top: 0
+		left: 0
+		z-index: 2
+	&__video
+		position: absolute
+		inset: 0
+		width: 100%
+		height: 100%
+		z-index: 1
+	&__title
+		position: relative
+		z-index: 3
+		max-width: 576px
+		margin: 0 auto
+		text-align: center
+		margin-bottom: 85px
+	&__text
+		position: relative
+		z-index: 3
+		max-width: 1360px 
+		margin: 0 auto
+		@include mixins.font(64px, 400, 75px)
+		text-align: center
+		&-colored
+			display: block
+			background-color: vars.$secondary-color
+			width: fit-content
+			margin: 0 auto
+			padding: 15px 20px
+			border-radius: 9px
+			margin-top: 10px
+
+.customers
+	margin-bottom: 67px
+	&__inner 
+		padding: 83px 0px 102px 119px
+		border-radius: 19px
+		background: url('../../assets/cursomers.svg') center/cover no-repeat
+	&__top
+		display: flex
+		justify-content: space-between
+		align-items: end
+		margin-bottom: 50px
+		max-width: 1140px
+	&__bottom
+		display: flex
+		column-gap: 20px
+	&__title 
+		@include mixins.font(65px, 400, 75px,)
+		max-width: 430px
+	&__action
+		display: flex 
+		justify-content: space-between
+		align-items: end
+		&-btn
+			transition: transform .3s ease
+			&:hover
+				transform: translateY(-2px)
+			padding: 0
+			&.left svg
+				color: #4A4A55
+			&.right
+				svg
+					transform: rotate(180deg)
+			&-img
+				width: 32px
+				height: 32px
+				color: vars.$secondary-color

@@ -1,0 +1,36 @@
+@use '../absctract/_variables' as vars
+@use '../absctract/_mixins' as mixins
+	
+.footer
+	margin-bottom: 70px
+	&__top 
+		display: flex
+		align-items: center
+		justify-content: start
+		column-gap: 40px
+		padding: 22px 0 17px 0
+		margin-bottom: 20px
+	&__bottom
+		display: flex
+		align-items: center
+		justify-content: space-between
+		font-size: 22px
+
+	&__avard
+		display: flex
+		align-items: center
+		column-gap: 40px
+		padding-left: 29px 
+		border-left: 1px solid vars.$grey-color
+	&__download
+		flex-grow: 1
+		text-align: end
+		button
+			margin-left: auto
+		&-text 
+			margin-right: 70px
+			color: vars.$secondary-color
+			@include mixins.font(22, 700)
+		
+	&__copyright
+		color: #8690A1

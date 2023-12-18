@@ -1,0 +1,21 @@
+@use '../absctract/_variables' as vars
+@use '../absctract/_mixins' as mixins
+
+	
+.review
+	max-width: 595px 
+	padding: 52px 31px 0 0
+	&__text
+		@include mixins.font(22px, 400, 31.2px)
+		margin-bottom: 32px
+	&__user
+		display: flex 
+		align-items: center
+		column-gap: 20px
+		&-img-box
+			width: 64px
+			height: 64p
+		&-rating-list
+			display: flex
+
+		
