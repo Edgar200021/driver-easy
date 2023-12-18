@@ -452,6 +452,40 @@ body {
     transform: scaleY(-1) rotate(-135deg);
   }
 }
+.dont-wast-time {
+  position: relative;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  z-index: 2;
+}
+.dont-wast-time::after {
+  content: "";
+  position: absolute;
+  background: center/cover no-repeat;
+  background-image: url("../../assets/icons/driver-easy.svg");
+  width: 290px;
+  height: 236px;
+  bottom: -40px;
+  right: 20px;
+  filter: blur(2.5px);
+  z-index: -1;
+}
+.dont-wast-time__text {
+  font-size: 45px;
+  font-weight: 300;
+  font-family: "Jost";
+}
+
+.-bottom-150::after {
+  bottom: -150px;
+}
+
+.b {
+  background-color: linear-gradient(to right, #1E3255, #4869A1, #010811, #012232);
+}
+
 .button {
   display: inline-block;
   max-width: 250px;
@@ -790,9 +824,22 @@ body {
 
 .review {
   max-width: 595px;
-  max-height: 550px;
+  max-height: 570px;
   height: 100%;
   padding: 52px 31px 0 0;
+  position: relative;
+  border-top-right-radius: 48px;
+  border-right: 1.2px solid white;
+}
+.review::after {
+  content: "";
+  position: absolute;
+  top: 0px;
+  right: 40px;
+  width: 90%;
+  height: 0.8px;
+  background: linear-gradient(to right, transparent, white);
+  filter: blur(0.1px);
 }
 .review__text {
   font-size: 22px;
@@ -807,8 +854,9 @@ body {
   column-gap: 20px;
 }
 .review__user-img-box {
+  border-radius: 100px;
   width: 64px;
-  height: 64p;
+  height: 64px;
 }
 .review__user-rating-list {
   display: flex;
@@ -819,6 +867,15 @@ body {
   max-height: 534px;
   height: 100%;
   min-height: 400px;
+}
+#instructions-swiper div.swiper-slide {
+  border-radius: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#instructions-swiper div.swiper-slide img {
+  border-radius: inherit;
 }
 
 .swiper-slide-sm {
@@ -1638,6 +1695,7 @@ body {
 .customers__inner {
   padding: 83px 0px 102px 119px;
   border-radius: 19px;
+  background: linear-gradient(to right, #1E3255, #4869A1, #010811, #012232);
 }
 .customers__top {
   display: flex;

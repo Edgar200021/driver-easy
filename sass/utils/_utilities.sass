@@ -1,5 +1,6 @@
 @use '../absctract/_variables' as vars
-	
+@use '../absctract/_mixins' as mixins
+
 .container 
 	max-width: vars.$container-width 
 	margin: 0 auto
@@ -154,3 +155,32 @@
 		transform: scaleY(-1) rotate(-135deg)
 
 
+.dont-wast-time
+	position: relative
+	margin: 0 auto
+	display: flex
+	flex-direction: column
+	row-gap: 20px
+	z-index: 2
+	&::after
+		content: ''		
+		position: absolute 
+		background: center/cover no-repeat
+		background-image: url('../../assets/icons/driver-easy.svg')
+		width: 290px
+		height: 236px
+		bottom: -40px
+		right: 20px
+		filter: blur(2.5px)
+		z-index: -1
+	&__text
+		@include mixins.font(45px, 300)
+
+
+.-bottom-150
+	&::after
+		bottom: -150px
+
+
+.b
+	background-color: linear-gradient(to right, #1E3255, #4869A1, #010811, #012232)

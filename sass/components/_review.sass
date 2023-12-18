@@ -4,9 +4,21 @@
 	
 .review
 	max-width: 595px 
-	max-height: 550px
+	max-height: 570px
 	height: 100%
 	padding: 52px 31px 0 0
+	position: relative
+	border-top-right-radius: 48px
+	border-right: 1.2px solid white			
+	&::after 
+		content: ''
+		position: absolute
+		top: 0px
+		right: 40px
+		width: 90%
+		height: .8px
+		background: linear-gradient(to right, transparent, white)
+		filter: blur(.1px)
 	&__text
 		@include mixins.font(22px, 400, 31.2px)
 		margin-bottom: 32px
@@ -15,8 +27,9 @@
 		align-items: center
 		column-gap: 20px
 		&-img-box
+			border-radius: 100px
 			width: 64px
-			height: 64p
+			height: 64px
 		&-rating-list
 			display: flex
 
