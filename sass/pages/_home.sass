@@ -13,21 +13,11 @@
 		display: flex 
 		gap: 20px
 
-//.update-decor
-//	position: relative	
-//	&::after
-//		content: ''
-//		position: absolute 
-//		background: center/cover no-repeat
-//		width: 800px
-//		height: 800px
-//		bottom: 0
-//		right: 0
-//		background-image: url()
-//		z-index: -5
-//		border-radius: 100%
-//		background:  url('../../assets/img/decor.png'), lightgray 0px 0px / 100% 100% no-repeat
-//		opacity: 0.1
+.update-decor
+	overflow: hidden
+	&::after
+		top: 500px
+		right: -450px
 
 
 .update
@@ -162,7 +152,8 @@
 		width: 100%
 		height: 100%
 		border: 1px solid  #17171F
-		background: radial-gradient(100% 100% at 50% 100%, #7686B6 0%, #375DAE 32.69%, rgba(0, 0, 0, 0.00) 100%), #0A0A14
+		background: radial-gradient(100% 100% at 70% 100%, #7686B6 0%, #375DAE 32.69%, rgba(0, 0, 0, 0.00) 100%), #0A0A14
+
 .certified
 	margin-bottom: 86px
 	&__title
@@ -170,17 +161,44 @@
 		margin-bottom: 78px
 	&__text
 		position: relative
-		padding: 40px 180px 25px 200px
+		padding: 0 122px 25px 122px
 		display: flex 
 		column-gap: 20px 
 		@include mixins.font(28px)
 		margin-bottom: 50px
+		&-left
+			flex-grow: 1
+			padding-left: 80px
+			padding-bottom: 20px
+			padding-top: 40px
+			position: relative
+			border-top-left-radius:  48px
+			border-left: 1px solid rgba(255,255,255, .1)
+			&::after 
+				content: ''
+				position: absolute
+				top: 2px
+				left: 30px
+				width: 50%
+				height: 1px
+				background: linear-gradient(to left, transparent, rgba(255, 255, 255, 0.1))
+				filter: blur(.1px)
 		&-right 
-			background: linear-gradient(to right, transparent) padding-box,linear-gradient(to right, black 0%, white 98%, black 101%) border-box
-			border-bottom-right-radius: 56px
-			border-bottom: 2px solid #fff
-			border-right: 2px solid #fff
-			padding-top: 60px
+			padding-right: 80px
+			padding-top: 100px
+			padding-bottom: 20px
+			position: relative
+			border-bottom-right-radius: 48px
+			border-right: 1px solid rgba(255,255,255, .1)			
+			&::after 
+				content: ''
+				position: absolute
+				bottom: 1.5px
+				right: 33px
+				width: 50%
+				height: 1px
+				background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.1))
+				filter: blur(.1px)
 		&::before
 			content: ''
 			position: absolute 
@@ -203,14 +221,47 @@
 		margin-bottom: 65px
 		text-align: center
 	&__content
-		padding: 40px 90px 0px 200px
+		padding: 40px 122px 0px 122px
 		display: flex
 		justify-content: space-between
 		&-left
-			max-width: 467px
-		&-right
+			@include mixins.font(28px)
+			padding-left: 80px
+			padding-top: 40px
+			max-width: 610px
+			width: 100%
+			flex-grow: 1
 			position: relative
-			width: 551px
+			border-top-left-radius:  48px
+			border-left: 1px solid rgba(255,255,255, .1)
+			&::after 
+				content: ''
+				position: absolute
+				top: 2px
+				left: 30px
+				width: 50%
+				height: 1px
+				background: linear-gradient(to left, transparent, rgba(255, 255, 255, 0.1))
+				filter: blur(.1px)
+		&-right
+			padding-top: 40px
+			position: relative
+			padding-right: 25px
+			padding-bottom: 28px
+			border-bottom-right-radius: 48px
+			border-right: 1px solid rgba(255,255,255, .1)
+			&::before
+				content: ''
+				position: absolute
+				bottom: 2px
+				right: 33px
+				width: 90%
+				height: 1px
+				background: linear-gradient(to right, transparent, rgba(255, 255, 255, .1))
+				filter: blur(.1px)
+		&-right-box
+			position: relative
+			width: 466px
 			height: 250px
 			background: #0a0a0a
 			border-radius: 48px
@@ -219,12 +270,12 @@
 				position: absolute
 				width: 244px
 				height: 331px
-				right: 150px
+				right: 70px
 				top: -100px
 				background: url('../../assets/icons/cloud.svg') center/cover no-repeat
 			
 	&__text
-		max-width: 400px
+		max-width: 467px
 		@iclude mixins.font(28px)
 		margin-bottom: 33px
 	&__btn
@@ -233,14 +284,17 @@
 
 .manufacturer
 	margin-bottom: 79px
-
+	&::after
+		left: -200px
+		bottom: -300px
+		z-index: 10
 	&__title
 		text-align: center
 		margin-bottom: 46px
 	&__inner
 		display: flex
 		justify-content: space-between
-	&__text 
+	&__text
 		width: 845px
 		flex-grow: 1
 		@include mixins.font(64px)
@@ -249,25 +303,86 @@
 			background-color: vars.$secondary-color
 			padding: 0 22px 
 			margin-right: 18px
+	&__toggle
+		display: block
+		position: absolute 
+		right: 30px
+		top: 80px
+		width: 8px
+		height: 40px
+		cursor: pointer
+		&:not:has(input:checked)
+			span
+				transform: translateY(-12px)
+		&:has(input:checked)
+			span
+				transform: translateY(12px)
+		&::before,&::after
+			content: ''
+			position: absolute
+			left: 0
+			width: 100%
+			height: 8px
+			border-radius: 100px
+			background-color: #113965
+		&::before
+			top: 0
+		&::after
+			bottom: 0
+		&-input
+			position: fixed
+			opacity: 0
+			user-select: none
+		span
+			position: absolute
+			height: 28px
+			width: 100%
+			border-radius: 30px
+			left: 0
+			background-color: #197FE3
+			transition: all .5s ease
+			z-index: 6
+			top: 0
 	&__info
 		position: relative
 		overflow: hidden
 		width: 590px
 		border-radius: 30px
-		background: linear-gradient(180deg, rgba(68, 62, 56, 0.00) 0%, #111115 100%)
 		padding: 91px 150px 33px 39px
-		&::before
-			content: ''
+		-webkit-transition: background-color 10000ms linear
+		-ms-transition: background-color 10000ms linear
+		transition: background-color 10000ms linear
+		&:not(:has(* input:checked))
+			background: linear-gradient(180deg, rgba(68, 62, 56, 0.00) 0%, #111115 100%)
+			&::after
+				opacity: 0
+			&::before
+				opacity: 1
+		&:has(* input:checked)
+			background: linear-gradient(180deg, rgba(25, 127, 227, 0.00) 0%, #197FE3 100%)
+			&::after
+				opacity: 1
+			&::before
+				opacity: 0
+		&::before,&::after
+			content: ''			
 			position: absolute
-			bottom: -100px
-			right: -50px
-			width: 100%
-			height: 100%
-			background-image: url('../../assets/img/shield-right.png') 
+			bottom: 30px
+			width: 570px
+			height: 570px
 			background-position: bottom right
-			background-size: cover
+			background-size: contain
 			background-repeat: no-repeat
 			z-index: -1
+			transition: opacity .4s ease
+		&::before
+			right: 0
+			background-image: url('../../assets/img/shield-right.png') 
+			opacity: 1
+		&::after
+			right: -20px
+			background-image: url('../../assets/img/shield-front.png') 
+			opacity: 0
 		&-title
 			display: block 
 			@include mixins.font(32px,300,38.4px)
@@ -299,6 +414,12 @@
 				border-radius: 9px
 				margin-bottom: 22px
 
+.functions-wrapper
+	overflow: hidden
+	&::after
+		right: -300px
+		top: 950px
+		z-index: 5
 
 .functions
 	margin-bottom: 86px
@@ -313,15 +434,17 @@
 		flex-wrap: wrap
 		gap: 45px 80px
 	&__btn
+		cursor: pointer
+		position: absolute
 		display: inline-flex
 		align-items: center
 		column-gap: 7px
-		position: absolute
 		right: 12px
 		bottom: 0
 		transition: transform .3s ease
+		z-index: 100
 		&:hover
-			transform: translateY(-5px)
+			transform: translateY(-4px)
 		&-img
 			width: 32px
 			height: 32px
@@ -355,6 +478,7 @@
 		display: flex
 		justify-content: space-between
 		&-left
+			flex-grow: 1 !important
 			padding-left: 24px
 			max-width: 660px
 			width: 100%
@@ -364,15 +488,22 @@
 		position: relative
 		@include mixins.font(32px, 700, 44px)
 		letter-spacing: -.5px
+		&:hover
+			& * span.instructions__item-count 
+				color: vars.$secondary-color
+
 		&_active
 			& > div.instructions__item-box
 				grid-template-rows: 1fr
 			& * span.instructions__item-count 
 				color: vars.$secondary-color
 		&-top
+			display: block
 			cursor: pointer
 			margin-bottom: 6px
 		&-count
+			display: inline-block
+			width: 46px
 			@include mixins.font(48px,400,50px, 'YourGrace')
 			letter-spacing: 4px
 			color: rgba(0, 182, 122, 0.40)
@@ -450,7 +581,6 @@
 	&__inner 
 		padding: 83px 0px 102px 119px
 		border-radius: 19px
-		background: url('../../assets/cursomers.svg') center/cover no-repeat
 	&__top
 		display: flex
 		justify-content: space-between
@@ -468,12 +598,13 @@
 		justify-content: space-between
 		align-items: end
 		&-btn
+			&:disabled
+				svg
+					color: #4A4A55
 			transition: transform .3s ease
 			&:hover
 				transform: translateY(-2px)
 			padding: 0
-			&.left svg
-				color: #4A4A55
 			&.right
 				svg
 					transform: rotate(180deg)
@@ -481,3 +612,4 @@
 				width: 32px
 				height: 32px
 				color: vars.$secondary-color
+				transition: color .4s ease

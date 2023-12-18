@@ -15,6 +15,11 @@
 	&:not(:nth-child(3), :nth-child(4))
 		svg
 			transition: all .3s ease	
+	&:nth-child(8)
+		&:hover
+			img
+				filter: invert(45%) sepia(62%) saturate(3656%) hue-rotate(128deg) brightness(80%) contrast(101%)
+
 	&:nth-child(1), &:nth-child(5), &:nth-child(7), &:nth-child(9), &:nth-child(10),&:nth-child(12)
 		svg
 			color: vars.$primary-color

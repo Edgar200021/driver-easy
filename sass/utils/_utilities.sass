@@ -56,6 +56,20 @@
 		background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMSIgaGVpZ2h0PSIyMSIgdmlld0JveD0iMCAwIDIxIDIxIiBmaWxsPSJub25lIj4NCjxjaXJjbGUgY3g9IjEwLjUiIGN5PSIxMC41IiByPSIxMC41IiBmaWxsPSIjMTcxNzFGIi8+DQo8L3N2Zz4=') center no-repeat
 
 
+.elipse-decor
+	position: relative
+	&::after
+		content: ''
+		position: absolute 
+		width: 800px
+		height: 800px
+		bottom: 0
+		right: 0
+		z-index: -5
+		border-radius: 100%
+		background:  url('../../assets/icons/elipse-blue.svg') center/cover no-repeat
+		filter: blur(100px)
+
 
 .border-black-container
 	position: relative
