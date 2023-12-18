@@ -2,19 +2,19 @@ import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs
 
 const wait = (delay = 0) => new Promise(resolve => setTimeout(resolve, delay))
 
-const setVisible = (elementOrSelector, visible) =>
+const setVisible = (elementOrSelector, visible, display) =>
   ((typeof elementOrSelector === 'string'
     ? document.querySelector(elementOrSelector)
     : elementOrSelector
-  ).style.display = visible ? 'block' : 'none')
+  ).style.display = visible ? display : 'none')
 
-setVisible('.page', false)
-setVisible('#loading', true)
+setVisible('.page', false, 'none')
+setVisible('#loading', true, 'flex')
 
 document.addEventListener('DOMContentLoaded', () => {
-  wait(1000).then(() => {
-    setVisible('.page', true)
-    setVisible('#loading', false)
+  wait(30000).then(() => {
+    setVisible('.page', true, 'block')
+    setVisible('#loading', false, 'none')
   })
 
   //! Accordion
