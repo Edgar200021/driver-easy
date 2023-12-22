@@ -1825,10 +1825,19 @@ body {
     border: 0;
     padding-top: 0;
   }
+  .download__content-left button {
+    display: block;
+    margin-left: 120px;
+  }
 }
 @media (max-width: 744px) {
   .download__content-left {
     padding-left: clamp(0.938rem, -4.08rem + 21.41vw, 5.875rem);
+  }
+}
+@media (max-width: 600px) {
+  .download__content-left button {
+    margin: 0 auto;
   }
 }
 .download__content-left::after {

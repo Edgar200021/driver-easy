@@ -386,8 +386,15 @@
 				max-width: 100%
 				border: 0
 				padding-top: 0
+				button
+					display: block
+					margin-left: 120px
 			@include mixins.respond(mini-tablet)
-				padding-left: clamp(0.938rem, -4.08rem + 21.41vw, 5.875rem)
+				padding-left: clamp(0.938rem, -4.08rem + 21.41vw, 5.875rem)		
+			@include mixins.respond(phone)
+				button
+					margin: 0 auto
+				
 			&::after 
 				content: ''
 				position: absolute
