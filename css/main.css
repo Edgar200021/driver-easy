@@ -1341,6 +1341,18 @@ body {
   top: 500px;
   right: -450px;
 }
+@media (max-width: 600px) {
+  .update-decor::after {
+    z-index: 10;
+    top: 600px;
+  }
+}
+@media (max-width: 400px) {
+  .update-decor::after {
+    z-index: 10;
+    top: 800px;
+  }
+}
 
 .update {
   margin-bottom: 190px;
@@ -1575,7 +1587,7 @@ body {
   display: flex;
   flex-direction: column;
   row-gap: 20px;
-  z-index: 2;
+  z-index: 11;
   white-space: nowrap;
 }
 @media (max-width: 1024px) {
