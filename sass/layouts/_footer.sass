@@ -10,26 +10,60 @@
 		column-gap: 40px
 		padding: 22px 0 17px 0
 		margin-bottom: 20px
+		@include mixins.respond(desktop)
+			flex-direction: column
+			row-gap: 20px
 	&__bottom
 		display: flex
 		align-items: center
 		justify-content: space-between
 		font-size: 22px
+		@include mixins.respond(desktop)
+			justify-content: center
+	&__logo
+		@include mixins.respond(desktop)
+			display: inline-block
+	hr
+		width: 94px
+		height: .7px
+		background-color: #8690A1
+		@include mixins.respond(desktop)
+			display: block
+		
 	&__avard
 		display: flex
 		align-items: center
 		column-gap: 40px
 		padding-left: 29px 
 		border-left: 1px solid vars.$grey-color
+		@include mixins.respond(desktop)
+			margin-bottom: 30px
+			padding-left: 0
+			border-left: 0
 	&__download
 		flex-grow: 1
 		text-align: end
+		@include mixins.respond(desktop)
+			text-align: center
+			span.footer__langs
+				display: block
 		button
 			margin-left: auto
-		&-text 
-			margin-right: 70px
-			color: vars.$secondary-color
-			@include mixins.font(22, 700)
+			margin-bottom: 20px
+			@include mixins.respond(desktop)
+				margin: 0 auto 20px  auto
 		
+	&__available
+		@include mixins.respond(desktop)
+			display: block
+			margin-right: 0
+			margin-bottom: 20px	
+			font-size: 16px
 	&__copyright
+		@include mixins.font(clamp(1rem, 0.868rem + 0.56vw, 1.375rem))
 		color: #8690A1
+		text-align: center
+	&__langs
+		@include mixins.font(clamp(1rem, 0.868rem + 0.56vw, 1.375rem))
+		@include mixins.respond(desktop)
+			display: none

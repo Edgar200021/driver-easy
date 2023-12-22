@@ -55,7 +55,12 @@ body
 	font-size: 24px
 
 .first-title
-	@include mixins.font(50px, 700, 50px)
+	@include mixins.font(clamp(2.125rem, 1.839rem + 1.43vw, 3.125rem), 700, 50px)
+	@include mixins.respond(phone)
+		line-height: normal
+	@include mixins.respond(small-phone)
+		font-size: 26px
+	
 
 .second-title
-	@include mixins.font(45px, 400)
+	@include mixins.font(clamp(2rem, 1.769rem + 1.16vw, 2.813rem), 400)

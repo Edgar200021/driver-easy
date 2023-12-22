@@ -8,14 +8,39 @@
 
 .advantages
 	margin-bottom: 86px
+	&__small-circle
+		@include mixins.respond(tablet)
+			left: -30%
+			top: 10%
+		@include mixins.respond(mobile-first)
+			display: none
+
+	&__big-circle
+		@include mixins.respond(desktop)
+			right: -50%
+		@include mixins.respond(tablet)
+			right: -70%		
+		@include mixins.respond(tablet)
+			right: -87%		
+			top: -40px
+		@include mixins.respond(mobile-first)
+			display: none
 	&__container
 		position: relative
+		overflow-x: clip
 	&__title
 		text-align: center
 		margin-bottom: 100px
+		@include mixins.respond(mini-tablet)
+			margin-bottom: 50px
 	&__list
 		display: flex 
-		gap: 20px
+		justify-content: center 
+		gap: clamp(1.25rem, 1.722rem + -2.36vw, 0.625rem)
+		@include mixins.respond(desktop)
+			flex-wrap: wrap
+
+		
 
 .update-decor
 	overflow: hidden
@@ -29,13 +54,28 @@
 	&__title
 		margin-bottom: 114px
 		text-align: center
+		br
+			display: none
+		@include mixins.respond(mini-tablet)
+			margin-left: auto
+			margin-right: auto
+			margin-bottom: 65px
+			max-width: 565px
+			br
+				display: block
 	&__descr
-		@include mixins.font(64px,400, 75px)
+		@include mixins.font(clamp(2.125rem, 0.132rem + 4.29vw, 4rem),400, 75px)
 		max-width: 990px
+		@include mixins.respond(tablet)
+			line-height: normal
+		@include mixins.respond(mobile-first)
+			@include mixins.font(clamp(1.75rem, 1.466rem + 1.42vw, 2.125rem))
 		&-box
 			position: relative
-			margin-bottom: 60px
+			margin-bottom: clamp(1.563rem, 0.94rem + 3.11vw, 3.75rem)
 			overflow-x: clip
+			@include mixins.respond(phone)
+			overflow-x: visible
 			&::before	
 				content: ''
 				position: absolute 
@@ -46,35 +86,57 @@
 				height: 450px
 				background-image: url('../../assets/img/ill_shield.png')
 				z-index: -1
+				@include mixins.respond(tablet)
+					opacity: .4
+					right: -100px
+					top: -20px
+				@include mixins.respond(mini-tablet)
+					width: clamp(25rem, 11.951rem + 54.95vw, 37.5rem)
+					top: 80px
+					right: -120px		
 		&-text
-			display: inline-block
+			display: block
+			width: fit-content
 			border-radius: 0px 9px 9px 0px
 			padding: 15px 22px
 			background-color: vars.$secondary-color
 			margin-top: 15px
+			@include mixins.respond(tablet)
+				padding: 8px 12px
+			@include mixins.respond(mini-tablet)
+				width: clamp(14.313rem, 7.723rem + 27.75vw, 20.625rem)
+				padding: 8px 12px
 			span
 				color: rgba(255, 255, 255, 0.50)
 	&__info
 		&-link
 			display: block
-			@include mixins.font(45px)
+			@include mixins.font(clamp(1.375rem, 0.966rem + 2.05vw, 2.813rem))
 			margin-bottom: 60px
 		&-title
 			position: relative
-			@include mixins.font(42px, 400, 48.75px)
+			@include mixins.font(clamp(1.375rem, 1.019rem + 1.78vw, 2.625rem), 400, 48.75px)
 			padding-left: 56px
 			max-width: 680px
 			display: inline-block
 			margin-bottom: 25px
+			@include mixins.respond(mini-tablet)
+				margin-bottom: clamp(2.125rem, 0.238rem + 9.43vw, 4.625rem)
+			@include mixins.respond(phone)
+				line-height: normal
+				padding-left: 28px
 			&::before
 				content: ''
 				position: absolute 
 				left: 16px
 				top: 20px
-				width: 15px
-				height: 15px
+				width: clamp(0.625rem, 0.536rem + 0.44vw, 0.938rem)
+				height: clamp(0.625rem, 0.536rem + 0.44vw, 0.938rem)
 				background-color: white
 				border-radius: 100%
+				@include mixins.respond(phone)
+					left: 10px
+					top: 12px
 			&-box
 				display: flex
 				align-items: start
@@ -83,19 +145,45 @@
 				display: inline-block
 				height: 2px
 				background: white		
-				margin-top: 35px	
+				margin-top: 35px
+				@include mixins.respond(desktop)
+					display: none
+				
 		&-content
 			padding-left: 56px
 			display: flex
+			gap: 15px
+			@include mixins.respond(tablet)
+				flex-direction: column
+				justify-content: start
+			@include mixins.respond(mini-tablet)
+				flex-direction: column
+				justify-content: start
+				row-gap: 0
+			@include mixins.respond(phone)
+				padding-left: 0
+		&-hr
+			display: none
+			@include mixins.respond(tablet)
+				display: block
+				width: 100%
+				height: 1px
+				background: white
+				margin-bottom: 45px
 		&-text
 			position: relative
 			padding-left: 40px
 			max-width: 653px
-			@include mixins.font(28px)
+			@include mixins.font(clamp(1.125rem, 0.947rem + 0.89vw, 1.75rem))
 			background: linear-gradient(180deg, #FFF 0.30%, rgba(255, 255, 255, 0.00) 96.18%)
 			background-clip: text
 			-webkit-background-clip: text
 			-webkit-text-fill-color: transparent
+			@include mixins.respond(tablet)
+				br
+					display: none
+			@include mixins.respond(phone)
+				padding-left: 28px
 			&::before
 				content: ''
 				position: absolute 
@@ -105,6 +193,10 @@
 				height: 5px
 				background-color: white
 				border-radius: 100%
+				@include mixins.respond(phone)
+					left: 12px
+					top: 10px
+
 		&-download
 			position: relative
 			margin: 0 auto
@@ -112,17 +204,21 @@
 			flex-direction: column
 			row-gap: 20px
 			z-index: 2
-			&::after
-				content: ''		
-				position: absolute 
-				background: center/cover no-repeat
-				background-image: url('../../assets/icons/driver-easy.svg')
-				width: 290px
-				height: 236px
-				bottom: -40px
-				right: 20px
-				filter: blur(2.5px)
-				z-index: -1
+			white-space: nowrap
+			@include mixins.respond(tablet)
+				margin: 0
+				&::after
+					top: -10px
+			@include mixins.respond(phone)
+				&::after
+					object-fit: cover
+					top: -50px
+					filter: none
+			@include mixins.respond(small-phone)
+				&::after
+					right: -20px
+					top: -50px
+					filter: none
 			&-text 
 				@include mixins.font(45px, 300)
 
@@ -132,21 +228,32 @@
 	margin-bottom: 50px
 	&__title
 		text-align: center
-		margin-bottom: 100px	
+		margin-bottom: clamp(1.375rem, -0.342rem + 7.32vw, 6.25rem)
 	&__list
 		justify-items: start
-		padding: 84px 0
+		padding-top: clamp(2.5rem, 1.514rem + 4.15vw, 5.25rem)
+		padding-bottom: clamp(2.5rem, 1.514rem + 4.15vw, 5.25rem)
 		display: grid
-		grid-template-columns: repeat(3,1fr)
-		row-gap: 60px
+		grid-template-columns: repeat(auto-fit, minmax(400px, 1fr))
+		row-gap: clamp(1.25rem, 0.354rem + 3.77vw, 3.75rem)
+		@include mixins.respond(tablet)
+			grid-template-columns: repeat(auto-fit, minmax(300px, 1fr))
+		@include mixins.respond(phone)
+			grid-template-columns: 1fr !important
+			padding-bottom: 0
+			
+
+@media (max-width: 671px)
+	.drivers__list
+		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr))
 
 
 .certified-wrapper
 	position: relative
 	border-radius: 19px
-	padding-bottom: 70px
-	margin-bottom: 86px
-	padding-top: 86px
+	padding-bottom: clamp(2.875rem, 2.349rem + 2.25vw, 4.375rem)
+	padding-top: clamp(1.563rem, 0.225rem + 5.71vw, 5.375rem)
+	margin-bottom: clamp(1.563rem, 0.225rem + 5.71vw, 5.375rem)
 	&::before
 		content: ''
 		position: absolute
@@ -159,17 +266,21 @@
 		background: radial-gradient(100% 100% at 70% 100%, #7686B6 0%, #375DAE 32.69%, rgba(0, 0, 0, 0.00) 100%), #0A0A14
 
 .certified
-	margin-bottom: 86px
+	margin-bottom: clamp(1.563rem, 0.22rem + 5.73vw, 5.375rem)
 	&__title
 		text-align: center
-		margin-bottom: 78px
+		margin-bottom: clamp(0.688rem, -0.787rem + 6.29vw, 4.875rem)
 	&__text
 		position: relative
-		padding: 0 122px 25px 122px
+		padding: 0 clamp(0rem, -8.151rem + 17.53vw, 7.625rem) 25px clamp(0rem, -8.151rem + 17.53vw, 7.625rem)
 		display: flex 
 		column-gap: 20px 
-		@include mixins.font(28px)
-		margin-bottom: 50px
+		@include mixins.font(clamp(1.125rem, 0.906rem + 0.94vw, 1.75rem))
+		margin-bottom: clamp(0.75rem, -0.086rem + 3.57vw, 3.125rem)
+		@include mixins.respond(tablet)
+			column-gap: 0
+			flex-direction: column
+			padding-bottom: 0
 		&-left
 			flex-grow: 1
 			padding-left: 80px
@@ -178,6 +289,12 @@
 			position: relative
 			border-top-left-radius:  48px
 			border-left: 1px solid rgba(255,255,255, .1)
+			@include mixins.respond(tablet)
+				padding-right: 94px
+				padding-left: 94px
+			@include mixins.respond(mini-tablet)
+				padding-left: clamp(0.938rem, -4.08rem + 21.41vw, 5.875rem)
+				padding-right: clamp(0.938rem, -4.08rem + 21.41vw, 5.875rem)
 			&::after 
 				content: ''
 				position: absolute
@@ -189,11 +306,17 @@
 				filter: blur(.1px)
 		&-right 
 			padding-right: 80px
-			padding-top: 100px
+			padding-top: clamp(0rem, -6.681rem + 14.37vw, 6.25rem)
 			padding-bottom: 20px
 			position: relative
 			border-bottom-right-radius: 48px
-			border-right: 1px solid rgba(255,255,255, .1)			
+			border-right: 1px solid rgba(255,255,255, .1)
+			@include mixins.respond(tablet)
+				padding-left: 94px	
+				padding-right: 94px
+			@include mixins.respond(mini-tablet)
+				padding-left: clamp(0.938rem, -4.08rem + 21.41vw, 5.875rem)
+				padding-right: clamp(0.938rem, -4.08rem + 21.41vw, 5.875rem)
 			&::after 
 				content: ''
 				position: absolute
@@ -213,6 +336,16 @@
 			transform: translateX(-50%)
 			background: url('../../assets/icons/2d.svg') center/cover no-repeat
 			z-index: -1
+			@include mixins.respond(tablet)
+				left: 75%
+				top: 50%
+				transform: translate(0, -50%)
+			@include mixins.respond(mobile-first)
+				left: 50%
+			@include mixins.respond(small-phone )
+				left: 40%
+			
+			
 	&__btn
 		display: block
 		margin: 0 auto
@@ -222,12 +355,15 @@
 
 .download
 	&__title
-		margin-bottom: 65px
+		margin-bottom: clamp(0rem, -1.425rem + 6.08vw, 4.063rem)
 		text-align: center
 	&__content
-		padding: 40px 122px 0px 122px
+		padding: 40px clamp(0rem, -8.151rem + 17.53vw, 7.625rem) 25px clamp(0rem, -8.151rem + 17.53vw, 7.625rem)
 		display: flex
 		justify-content: space-between
+		column-gap: 20px
+		@include mixins.respond(tablet)
+			flex-direction: column
 		&-left
 			@include mixins.font(28px)
 			padding-left: 80px
@@ -238,6 +374,14 @@
 			position: relative
 			border-top-left-radius:  48px
 			border-left: 1px solid rgba(255,255,255, .1)
+			@include mixins.respond(tablet)
+				padding-right: 0
+				padding-left: 94px
+				max-width: 100%
+				border: 0
+				padding-top: 0
+			@include mixins.respond(mini-tablet)
+				padding-left: clamp(0.938rem, -4.08rem + 21.41vw, 5.875rem)
 			&::after 
 				content: ''
 				position: absolute
@@ -247,6 +391,9 @@
 				height: 1px
 				background: linear-gradient(to left, transparent, rgba(255, 255, 255, 0.1))
 				filter: blur(.1px)
+				@include mixins.respond(tablet)
+					display: none
+
 		&-right
 			padding-top: 40px
 			position: relative
@@ -254,6 +401,19 @@
 			padding-bottom: 28px
 			border-bottom-right-radius: 48px
 			border-right: 1px solid rgba(255,255,255, .1)
+			flex-shrink: 0
+			@include mixins.respond(tablet)
+				order: -1
+				padding-left: 94px	
+				padding-right: 94px
+				border: none
+				padding-bottom: 0
+				&::before
+					display: none
+			@include mixins.respond(mini-tablet)
+				padding-top: clamp(0rem, -2.541rem + 10.84vw, 2.5rem)
+				padding-left: clamp(0.938rem, -4.08rem + 21.41vw, 5.875rem)
+				padding-right: clamp(0.938rem, -4.08rem + 21.41vw, 5.875rem)
 			&::before
 				content: ''
 				position: absolute
@@ -269,44 +429,99 @@
 			height: 250px
 			background: #0a0a0a
 			border-radius: 48px
+			@include mixins.respond(mini-tablet)
+				width: clamp(18.625rem, 7.954rem + 45.53vw, 29.125rem)
+				height: clamp(8.125rem, 0.503rem + 32.52vw, 15.625rem)
+			@include mixins.respond(small-phone)
+				width: 260px !important
 			&::after
 				content: ''
 				position: absolute
-				width: 244px
-				height: 331px
-				right: 70px
-				top: -100px
+				width: clamp(13rem, 10.609rem + 5.14vw, 15.25rem)
+				height:  clamp(17.875rem, 14.886rem + 6.43vw, 20.688rem)
+				right: 14%
+				top: -20%
 				background: url('../../assets/icons/cloud.svg') center/cover no-repeat
+				@include mixins.respond(tablet)
+					top: -10%
+					right: 20%
+				@include mixins.respond(mini-tablet)
+					width: clamp(7.375rem, 1.659rem + 24.39vw, 13rem)
+					height: clamp(10.125rem, 2.249rem + 33.6vw, 17.875rem)
+				@include mixins.respond(phone)
+					top: -30% 
+					right: 50%
+					transform: translateX(50%)
+
+				
 			
 	&__text
 		max-width: 467px
-		@iclude mixins.font(28px)
+		@include mixins.font(clamp(1.125rem, 0.906rem + 0.94vw, 1.75rem))
 		margin-bottom: 33px
+		@include mixins.respond(tablet)
+			position: relative
+			max-width: 100%
+			width: 100%
+			border-bottom-right-radius:  48px
+			border-right: 1px solid rgba(255,255,255, .1)
+			padding-right: 188px
+			padding-top: 40px
+			padding-bottom: clamp(0.938rem, -0.65rem + 6.78vw, 2.5rem)
+			&::after 
+				content: ''
+				position: absolute
+				bottom: 0px
+				right: 10px
+				width: 50%
+				height: 1px
+				background: linear-gradient(to left, transparent, rgba(255, 255, 255, 0.1))
+				filter: blur(.1px)
+		@include mixins.respond(mini-tablet)
+				padding-right: clamp(0.938rem, -4.08rem + 21.41vw, 5.875rem)
+				
 	&__btn
 		font-weight: 700
+		@include mixins.font(clamp(1rem, 0.868rem + 0.56vw, 1.375rem))
+		
 
 
 .manufacturer
-	margin-bottom: 79px
+	margin-bottom: clamp(1.125rem, -0.212rem + 5.71vw, 4.938rem)
 	&::after
 		left: -200px
 		bottom: -300px
 		z-index: 10
+		@include mixins.respond(mini-tablet)
+			left: -400px
+			bottom: -700px
+		@include mixins.respond(phone)
+			left: -500px
+		@include mixins.respond(small-phone)
+			left: -600px
 	&__title
 		text-align: center
-		margin-bottom: 46px
+		margin-bottom: clamp(0.75rem, 0.005rem + 3.18vw, 2.875rem)
 	&__inner
 		display: flex
 		justify-content: space-between
+		@include mixins.respond(desktop)
+			flex-direction: column
+			align-items: center
 	&__text
-		width: 845px
-		flex-grow: 1
-		@include mixins.font(64px)
+		max-width: 845px
+		@include mixins.font(clamp(1.75rem, 0.961rem + 3.37vw, 4rem))
+		@include mixins.respond(desktop)
+			max-width: 100%
 		span
 			border-radius: 0px 9px 9px 0px
 			background-color: vars.$secondary-color
 			padding: 0 22px 
 			margin-right: 18px
+			@include mixins.respond(phone)
+				display: block
+				margin-right: 0
+				padding: 0 15px
 	&__toggle
 		display: block
 		position: absolute 
@@ -315,6 +530,9 @@
 		width: 8px
 		height: 40px
 		cursor: pointer
+		@include mixins.respond(phone)
+			right: 0px
+			top: 60px
 		&:not:has(input:checked)
 			span
 				transform: translateY(-12px)
@@ -351,11 +569,14 @@
 		position: relative
 		overflow: hidden
 		width: 590px
+		flex-shrink: 0
 		border-radius: 30px
-		padding: 91px 150px 33px 39px
+		padding: clamp(2.813rem, 1.804rem + 4.3vw, 5.688rem) clamp(0.938rem, -2.022rem + 12.63vw, 9.375rem) 33px clamp(1.125rem, 0.687rem + 1.87vw, 2.375rem)
 		-webkit-transition: background-color 10000ms linear
 		-ms-transition: background-color 10000ms linear
 		transition: background-color 10000ms linear
+		@include mixins.respond(phone)
+			width: 100%
 		&:not(:has(* input:checked))
 			background: linear-gradient(180deg, rgba(68, 62, 56, 0.00) 0%, #111115 100%)
 			&::after
@@ -389,17 +610,29 @@
 			opacity: 0
 		&-title
 			display: block 
-			@include mixins.font(32px,300,38.4px)
-			margin-bottom: 27px
+			@include mixins.font(clamp(1.75rem, 1.662rem + 0.37vw, 2rem),300,38.4px)
+			margin-bottom: clamp(0.875rem, 0.59rem + 1.22vw, 1.688rem)
 		&-text 
-			@include mixins.font(24px,300,32px )
-			margin-bottom: 35px
+			@include mixins.font(clamp(1.125rem, 0.993rem + 0.56vw, 1.5rem),300,32px)
+			margin-bottom: clamp(1.313rem, 1.006rem + 1.31vw, 2.188rem)
 			color: rgba(255, 255, 255, 0.60)
 		&-windows
 			display: flex 
 			column-gap: 60px
+			@include mixins.respond(phone)
+				flex-direction: column
+				column-gap: 0
+				row-gap: 20px
+			
 			&-item 
 				@include mixins.font(18px, 300, 24px)
+				max-width: 102px
+				@include mixins.respond(phone)
+					display: flex
+					align-items: center
+					column-gap: 21px
+					max-width: 205px
+					line-height: normal
 				&:nth-child(1) div
 					background-color: #2E77BC
 				&:nth-child(2) div
@@ -413,7 +646,13 @@
 				width: 65px
 				height: 65px
 				color: white
+				@include mixins.respond(mini-tablet)
+					width: 50px
+					height: 50px
 			&-box
+				display: flex
+				justify-content: center
+				align-items: center
 				padding: 19px
 				border-radius: 9px
 				margin-bottom: 22px
@@ -424,19 +663,34 @@
 		right: -300px
 		top: 950px
 		z-index: 5
+		@include mixins.respond(desktop)
+			z-index: -5
+			top: 1600px
+			right: -400px
+		@include mixins.respond(phone)
+			top: 1800px
+		
 
 .functions
 	margin-bottom: 86px
 	&__container
 		margin-bottom: 93px
 	&__title
-		margin-bottom: 46px
+		margin-bottom: clamp(2.25rem, 2.031rem + 0.94vw, 2.875rem)
 		text-align: center
 	&__list
-		padding-top: 54px
-		display: flex
-		flex-wrap: wrap
-		gap: 45px 80px
+		padding-top: clamp(1.25rem, 0.505rem + 3.18vw, 3.375rem)
+		display: grid
+		grid-template-columns: repeat(auto-fit, minmax(310px, 1fr))
+		gap: clamp(1.563rem, 0.234rem + 2.86vw, 2.813rem) clamp(1.25rem, -2.736rem + 8.57vw, 5rem)
+		@include mixins.respond(tablet)
+			justify-content: center
+			padding-right: 5px		
+		@include mixins.respond(phone)
+			grid-template-columns: 1fr
+			padding-right: 0
+		@include mixins.respond(small-phone)
+			padding-right: 2px
 	&__btn
 		cursor: pointer
 		position: absolute
@@ -457,30 +711,48 @@
 		flex-direction: column
 		justify-content: center
 		align-items: center
+		row-gap: clamp(0.625rem, 0.43rem + 0.91vw, 1.25rem)
+		span
+			@include mixins.font(clamp(1rem, 0.964rem + 0.18vw, 1.125rem))
+	
+@media (max-width: 795px)
+	.functions__btn
+		bottom: -60px
+		right: 0
+
+
 
 
 .instructions
-	margin-bottom: 88px
+	margin-bottom: clamp(0.938rem, -0.489rem + 6.64vw, 5.5rem)
 	&__title
-		margin-block: 94px
+		margin-bottom: clamp(0.75rem, -0.853rem + 7.45vw, 5.875rem)
 		text-align: center
 	&__descr
 		max-width: 823px
-		margin-bottom: 114px
-		@include mixins.font(64px)
+		margin-bottom: clamp(3.188rem, 1.956rem + 5.73vw, 7.125rem)
+		@include mixins.font(clamp(1.75rem, 1.046rem + 3.27vw, 4rem))
 		position: relative
+		@include mixins.respond(desktop)
+			max-width: 100%
 		&::before
 			content: ''
 			width: 258px
 			height: 456px
 			position: absolute
 			top: 60px
-			right: -500px
+			right: -55%
 			background: url('../../assets/icons/stepbystep.svg') center/cover no-repeat
 			z-index: -1
+			@include mixins.respond(desktop)
+				display: none
 	&__content
 		display: flex
 		justify-content: space-between
+		@include mixins.respond(desktop)
+			flex-direction: column
+			align-items: center
+			row-gap: clamp(1.625rem, 1.087rem + 2.5vw, 2.25rem)
 		&-left
 			flex-grow: 1 !important
 			padding-left: 24px
@@ -490,8 +762,10 @@
 	&__item
 		width: fit-content
 		position: relative
-		@include mixins.font(32px, 700, 44px)
+		@include mixins.font(clamp(1.375rem, 1.179rem + 0.91vw, 2rem), 700, 44px)
 		letter-spacing: -.5px
+		@include mixins.respond(phone)
+			line-height: normal
 		&:hover
 			& * span.instructions__item-count 
 				color: vars.$secondary-color
@@ -502,7 +776,8 @@
 			& * span.instructions__item-count 
 				color: vars.$secondary-color
 		&-top
-			display: block
+			display: flex
+			align-items: center
 			cursor: pointer
 			margin-bottom: 6px
 		&-count
@@ -512,9 +787,10 @@
 			letter-spacing: 4px
 			color: rgba(0, 182, 122, 0.40)
 			transition: color .3s ease
-			margin-right: 58px
+			margin-right: clamp(0.813rem, -0.07rem + 4.11vw, 3.625rem)
 		&-img-box
 			height: 96px
+			flex-shrink: 0
 		&-img 
 			width: 2px
 			height: 100%
@@ -527,21 +803,27 @@
 		&-content
 			min-height: 0px
 			display: flex
-			column-gap: 90px
+			column-gap: clamp(3.125rem, 2.34rem + 3.65vw, 5.625rem)
 		&-text
 			max-width: 370px
 			color: #8690A1
-			@include mixins.font(20px, 500, 34px)
+			@include mixins.font(clamp(1.125rem, 1.047rem + 0.36vw, 1.375rem), 500, 34px)
+			@include mixins.respond(phone)
+				line-height: normal
 		&:not(:last-child)
 			margin-bottom: 42px
 
 
+@media (max-width: 1367px)
+	.instructions__descr::before
+		right: -30%
 
 .about
-	padding-top: 305px
-	margin-bottom: 85px
+	padding-top: clamp(10.25rem, 7.464rem + 12.96vw, 19.125rem)
+	margin-bottom: clamp(2.5rem, 1.617rem + 4.11vw, 5.313rem)
 	position: relative
 	user-select: none
+	overflow-x: hidden
 	&::before
 		content: ''
 		width: 100%
@@ -556,52 +838,70 @@
 		inset: 0
 		width: 100%
 		height: 100%
+		min-width: 800px
 		z-index: 1
+		@include mixins.respond(tablet)
+			left: 50% 
+			top: -20%
+			transform: translateX(-50%)
+		@include mixins.respond(phone)
+			left: 50% 
+			top: -10%
+			transform: translateX(-50%)
 	&__title
 		position: relative
 		z-index: 3
 		max-width: 576px
 		margin: 0 auto
 		text-align: center
-		margin-bottom: 85px
+		margin-bottom: clamp(2.5rem, 1.617rem + 4.11vw, 5.313rem)
 	&__text
 		position: relative
 		z-index: 3
 		max-width: 1360px 
 		margin: 0 auto
-		@include mixins.font(64px, 400, 75px)
+		@include mixins.font(clamp(1.75rem, 1.044rem + 3.28vw, 4rem), 400, 75px)
 		text-align: center
+		@include mixins.respond(phone)
+			line-height: normal
 		&-colored
 			display: block
 			background-color: vars.$secondary-color
 			width: fit-content
 			margin: 0 auto
-			padding: 15px 20px
+			padding: clamp(0.313rem, 0.116rem + 0.91vw, 0.938rem) clamp(0.625rem, 0.429rem + 0.91vw, 1.25rem)
 			border-radius: 9px
 			margin-top: 10px
 
 .customers
-	margin-bottom: 67px
+	margin-bottom: clamp(2.75rem, 2.244rem + 2.16vw, 4.188rem)
 	&__inner 
-		padding: 83px 0px 102px 119px
+		padding: clamp(2.5rem, 1.554rem + 4.04vw, 5.188rem) 0px clamp(2.5rem, 1.284rem + 5.66vw, 6.375rem) clamp(1.25rem, -0.692rem + 9.03vw, 7.438rem)
 		border-radius: 19px
 		background: linear-gradient(to right, #1E3255, #4869A1, #010811, #012232)
 	&__top
 		display: flex
 		justify-content: space-between
 		align-items: end
-		margin-bottom: 50px
+		margin-bottom: clamp(1.25rem, 0.59rem + 2.82vw, 3.125rem)
 		max-width: 1140px
+		@include mixins.respond(mini-tablet)
+			flex-direction: column
+			align-items: start
 	&__bottom
 		display: flex
 		column-gap: 20px
 	&__title 
-		@include mixins.font(65px, 400, 75px,)
+		@include mixins.font(clamp(2rem, 1.274rem + 3.1vw, 4.063rem), 400, 75px,)
 		max-width: 430px
+		@include mixins.respond(mini-tablet)
+			line-height: normal
 	&__action
 		display: flex 
 		justify-content: space-between
 		align-items: end
+		@include mixins.respond(mini-tablet)
+			margin-left: auto
 		&-btn
 			&:disabled
 				svg

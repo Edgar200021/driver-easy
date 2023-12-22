@@ -5,10 +5,15 @@
 .driver 
 	display: flex
 	align-items: center
-	column-gap: 29px
+	column-gap: clamp(1.25rem, 0.354rem + 3.77vw, 3.75rem)
 	padding: 13px
 	position: relative
 	user-select: none
+	@include mixins.respond(mini-tablet)
+		&:nth-child(n + 7)
+			display: none
+	@include mixins.respond(mini-phone)
+		column-gap: 29px
 	&:hover
 		span.driver__decor
 			opacity: 1
@@ -42,12 +47,14 @@
 		width: 100%
 		height: 69px
 	&__text
-		@include mixins.font(28px)
+		@include mixins.font(clamp(1.375rem, 1.241rem + 0.57vw, 1.75rem))
 		padding: 4px 6px
 		border-radius: 4px
 		background-color: vars.$secondary-color
 		box-shadow: 0px 5.486px 10.971px 0px rgba(0, 0, 0, 0.12)
 		text-transform: capitalize
+		@include mixins.respond(mobile-first)
+			white-space: normal
 	&__decor
 		position: absolute 
 		width: 100% 

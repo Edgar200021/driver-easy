@@ -10,6 +10,12 @@
 	left: 0
 	width: 100%
 	z-index: 50
+	@include mixins.respond(mini-tablet)
+		height: vars.$header-tablet-height
+	@include mixins.respond(phone)
+		height: vars.$header-mobile-height
+	&__logo
+		flex-shrink: 0
 	&__inner 
 		display: flex
 		align-items: center
@@ -17,16 +23,32 @@
 		column-gap: 40px
 		padding: 15px 0 17px 0
 	&__avard
-		max-width: 193px 
-		min-width: 147px
+		width: clamp(11rem, 9.864rem + 2.44vw, 12.063rem)
 		padding-left: 29px 
 		border-left: 1px solid vars.$grey-color
 		padding-top: 11px 
+		flex-shrink: 0
+		@include mixins.respond(mobile-first)
+			display: none
 	&__download
 		flex-grow: 1
 		text-align: end
+		font-size: clamp(1rem, 0.893rem + 0.54vw, 1.375rem)
+		&-btn
+			padding-left: clamp(1.563rem, 1.205rem + 1.79vw, 2.813rem)
+			padding-right: clamp(1.563rem, 1.205rem + 1.79vw, 2.813rem)
+		@include mixins.respond(tablet)
+			display: flex
+			flex-direction: column
+			align-items: center
+			flex-grow: 0
+			margin-left: auto
+			row-gap: 5px
 		&-text 
 			margin-right: 70px
 			color: vars.$secondary-color
-			@include mixins.font(22, 700)
+			@include mixins.font(clamp(0.875rem, 0.732rem + 0.71vw, 1.375rem), 700)
+			@include mixins.respond(tablet)
+				margin-right: 0
+				order: 1
 		

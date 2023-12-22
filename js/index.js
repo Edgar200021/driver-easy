@@ -56,9 +56,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const carouselSwiper = new Swiper('#customers-swiper', {
     direction: 'horizontal',
-    slidesPerView: 2,
+    slidesPerView: 1,
     speed: 700,
     allowTouchMove: false,
+    breakpoints: {
+      1141: {
+        slidesPerView: 2,
+        spaceBetween: 20,
+      },
+    },
   })
 
   const customersSwiper = document.querySelector('#customers-swiper').swiper,
@@ -69,13 +75,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const btn = e.target.closest('.customers__action-btn')
     if (!btn) return
 
+    const breakpoint = matchMedia('(min-width: 1141px)')
+
     const btnLeft = btn.classList.contains('left')
 
     btnLeft ? customersSwiper.slidePrev() : customersSwiper.slideNext()
 
     const slideIndex = customersSwiper.realIndex
 
-    if (slideIndex > 0) {
+    if (slideIndex > 0 && breakpoint.matches) {
       smallSlide.classList.add('swiper-slide-sm_active')
       smallSlide.nextElementSibling.classList.add('swiper-slide-opacity_active')
     } else {
@@ -85,8 +93,12 @@ document.addEventListener('DOMContentLoaded', () => {
       )
     }
 
-    if (!btnLeft && slideIndex >= 1) {
-      btn.disabled = true
+    if (!btnLeft) {
+      if (breakpoint.matches && slideIndex >= 1) {
+        btn.disabled = true
+      } else {
+        btn.disabled = slideIndex >= 2
+      }
       btn.previousElementSibling.disabled = false
     }
     if (btnLeft && slideIndex === 0) {

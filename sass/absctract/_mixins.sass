@@ -13,7 +13,10 @@
 
 @mixin respond($breakpoint)
 	@if $breakpoint == mobile-first
-		@media (min-width: 320px) and (max-width: 767px)
+		@media (min-width: 0) and (max-width: 743px)
+			@content
+	@if $breakpoint == small-phone
+		@media (max-width: 369px)
 			@content
 	@if $breakpoint == mini-phone
 		@media (max-width: 400px)
@@ -22,7 +25,7 @@
 		@media (max-width: 600px)
 			@content
 	@if $breakpoint == mini-tablet
-		@media (max-width: 768px)
+		@media (max-width: 744px)
 			@content
 	@if $breakpoint == tablet
 		@media (max-width: 1024px)

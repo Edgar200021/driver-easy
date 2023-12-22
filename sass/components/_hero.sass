@@ -5,11 +5,18 @@
 .hero
 	height: calc(100vh - vars.$header-height)
 	max-height: 1000px
-	min-height: 640px
+	min-height: 660px
 	position: relative
-	padding: 0 15px
+	padding-left: clamp(0rem, -0.268rem + 1.34vw, 0.938rem)
+	padding-right: clamp(0rem, -0.268rem + 1.34vw, 0.938rem)
 	margin-top: vars.$header-height
 	margin-bottom: 90px
+	@include mixins.respond(tablet)
+		height: 770px
+		margin-top: vars.$header-tablet-height
+	@include mixins.respond(phone)
+		margin-top: vars.$header-mobile-height
+	
 	&::after 
 		content: ''
 		display: block
@@ -22,30 +29,59 @@
 		background: url('../../assets/img/banner.jpg') center/cover no-repeat
 		border-bottom-left-radius: 50px
 		border-bottom-right-radius: 50px
+		overflow: hidden
 		z-index: -1
+		@include mixins.respond(tablet)
+			background-position: bottom -150px right -200px
+		@include mixins.respond(phone)
+			background-position: bottom -150px right -300px
+		@include mixins.respond(mini-phone)
+			background: url('../../assets/img/mobile-banner.jpg') center/cover no-repeat
+		
+		
 	&__content
 		max-width: 730px
-		padding: 83px 0 153px 0
+		padding-top: clamp(1.563rem, 0.527rem + 5.18vw, 5.188rem)
+		padding-bottom: clamp(1.563rem, -0.723rem + 11.43vw, 9.563rem)
 	&__title
 		text-transform: uppercase
 		margin-bottom: 20px
 	&__text
-		@include mixins.font(25px)
+		@include mixins.font(clamp(1.125rem, 1rem + 0.63vw, 1.563rem))
 		color: vars.$grey-color
-		margin-bottom: 26px
+		margin-bottom: clamp(1.063rem, 0.902rem + 0.8vw, 1.625rem)
 		span
 			display: block
-	
+	&__btn 
+		margin-bottom: clamp(0.625rem, 0.446rem + 0.89vw, 1.25rem)
 	&__available 
 		display: block
 		margin-bottom: 50px
 		letter-spacing: 0.09px
+		@include mixins.font(clamp(1rem, 0.964rem + 0.18vw, 1.125rem))
+		@include mixins.respond(tablet)
+			margin-bottom: 100px
+		@include mixins.respond(mini-tablet)
+			margin-bottom: 150px		
+		@include mixins.respond(mini-phone)
+			margin-bottom: 120px
+		@include mixins.respond(small-phone)
+			margin-bottom: 80px		
 	&__awards
 		display: flex
-		column-gap: 32px
+		column-gap: clamp(1rem, 0.714rem + 1.43vw, 2rem)
 		padding: 13px 17px
+		overflow: hidden
+		@include mixins.respond(phone)
+			padding-right: 0
 		li
+			flex-shrink: 0
 			user-select: none
+			@include mixins.respond(phone)
+				letter-spacing: -1px
+			@include mixins.respond(mini-phone)
+				letter-spacing: -1px
+
 		&-item
 			padding: 20px 17px  12px 17px
 			width: 192px

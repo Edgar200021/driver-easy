@@ -32,8 +32,7 @@
 		left: 40%
 		transform: translateX(-40%)
 		border-radius: 30px
-		background: url('data:image/svg+xmlbase64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMSIgaGVpZ2h0PSIyMSIgdmlld0JveD0iMCAwIDIxIDIxIiBmaWxsPSJub25lIj4NCjxjaXJjbGUgY3g9IjEwLjUiIGN5PSIxMC41IiByPSIxMC41IiBmaWxsPSIjMTcxNzFGIi8+DQo8L3N2Zz4=') center no-repeat
-
+		background-color: #17171F
 .big-circle
 	display: block 
 	position: absolute
@@ -54,7 +53,7 @@
 		transform: translateX(-30%)
 		top: 35px
 		border-radius: 30px
-		background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMSIgaGVpZ2h0PSIyMSIgdmlld0JveD0iMCAwIDIxIDIxIiBmaWxsPSJub25lIj4NCjxjaXJjbGUgY3g9IjEwLjUiIGN5PSIxMC41IiByPSIxMC41IiBmaWxsPSIjMTcxNzFGIi8+DQo8L3N2Zz4=') center no-repeat
+		background-color: #17171F
 
 
 .elipse-decor
@@ -78,6 +77,11 @@
 	border-top-right-radius: 56px
 	border-right: 2px solid transparent
 	z-index: 2
+	@include mixins.respond(tablet)
+		&::before
+			display: none
+	@include mixins.respond(phone)
+		background: linear-gradient(to right, #01010b, #01010b) padding-box,linear-gradient(to top, #01010b 40%, black, rgba(255,255,255,.1) 20% ) border-box,
 	&_without-image
 		&::before
 			display: none
@@ -165,16 +169,18 @@
 	&::after
 		content: ''		
 		position: absolute 
-		background: center/cover no-repeat
+		background: center/contain no-repeat
 		background-image: url('../../assets/icons/driver-easy.svg')
-		width: 290px
+		width: clamp(8.125rem, 5.278rem + 14.23vw, 18.125rem)
+		height: auto
 		height: 236px
 		bottom: -40px
 		right: 20px
 		filter: blur(2.5px)
 		z-index: -1
+		filter: blur(2.5px)
 	&__text
-		@include mixins.font(45px, 300)
+		@include mixins.font(clamp(1.375rem, 0.966rem + 2.05vw, 2.813rem), 300)
 
 
 .-bottom-150
@@ -182,5 +188,5 @@
 		bottom: -150px
 
 
-.b
-	background-color: linear-gradient(to right, #1E3255, #4869A1, #010811, #012232)
+.hidden
+	display: none
